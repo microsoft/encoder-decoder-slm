@@ -1,6 +1,6 @@
 # Return of the Encoder: Efficient Small Language Models
 
-📢 **Coming Soon**: Code and pretrained models will be available shortly!
+📢 **Coming Soon**: Pretrained models will be available shortly!
 
 ## Overview
 While large language models continue to grow in size, smaller models (≤1B parameters) require thoughtful architectural decisions. Our work demonstrates that encoder-decoder models inherently outperform decoder-only architectures before any optimizations:
@@ -16,12 +16,12 @@ While large language models continue to grow in size, smaller models (≤1B para
 ![Architectural Comparison](IntroFigure.png)
 *Architectural Efficiency in SLMs. Left: Comparison of architectures where encoder-decoder creates a fixed input representation with KV cache only for output, while decoder-only requires growing KV caches for both input and output. Top right: Inference time scaling with input length, showing encoder-decoder's efficient fixed-representation approach versus decoder-only's steeper computational growth. Bottom right: Performance across tasks showing encoder-decoder's advantages at fixed compute budget, further enhanced by KD.*
 
-## Key Innovations
+## Technical Highlights
 - **Efficient Base Architecture**: 2/3-1/3 encoder-decoder split consistently outperforms decoder-only
 - **Enhanced Performance**: Knowledge distillation from larger teachers while maintaining architectural benefits
 - **Hardware Efficiency**: Superior across GPU (86ms), CPU (1591ms), and NPU (189ms) platforms
 
-## Results Highlights
+## Performance
 Our 330M parameter model outperforms decoder-only baselines (given same training data & FLOPs):
 - SQuAD 2.0: 0.69/0.94 vs 0.57/0.90
 - IELTS: 0.32/0.46 vs 0.31/0.40
