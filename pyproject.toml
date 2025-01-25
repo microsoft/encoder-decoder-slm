@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mu"
+version = "0.1"
+dependencies = [
+  "torch",
+  "transformers",
+  "peft",
+  "Pillow",
+  "deepspeed",
+]
+
+[project.optional-dependencies]
+lint = [
+  "ruff",
+]
+format = [
+  "ruff"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mu"]
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+]
+exclude = [
+  "src/mu/mu_vision/*",
+]
+
+[tool.ruff]
+line-length = 120
