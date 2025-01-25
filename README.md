@@ -29,4 +29,18 @@ Our 330M parameter model outperforms decoder-only baselines (given same training
 - XSum: 0.27/0.20 vs 0.24/0.19
 We also show that results continue as we scale the models up to 1B parameters.
 
+## Usage
+
+Run the text2text example with `python -m mu.generate_text2text`
+
+Run the text+image2text example with `python -m mu.generate_text+image2text`
+
+Run KD training with `torchrun --nproc_per_node=${GPU_COUNT} -m mu.train_text2text_by_kd`
+
+The KD training code references a 'teacher.pt' which is a LoRA fine-tuned version of Phi-3-mini available on Hugging Face.
+
+## Test
+
+Run tests with `python -m unittest discover tests`
+
 ⭐ Star this repository to get notified when we release the code and models!
