@@ -7,7 +7,7 @@ name = "mu"
 version = "0.1"
 dependencies = [
   "torch",
-  "transformers",
+  "transformers==4.46.1",
   "peft",
   "Pillow",
   "deepspeed",
