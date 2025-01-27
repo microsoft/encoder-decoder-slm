@@ -29,7 +29,38 @@ Our 330M parameter model outperforms decoder-only baselines (given same training
 - XSum: 0.27/0.20 vs 0.24/0.19
 We also show that results continue as we scale the models up to 1B parameters.
 
+## Usage
+### Package Installation
+Before running our code, please create a virtual conda environment using python==3.10, and install necessary packages.
+```bash
+cd encoder-decoder-slm
+conda create -n slm_env python=3.10 -y
+conda activate slm_env
+pip install --upgrade pip
+pip install -e .
+```
 
+### Text2text Inference
+We provide example inference code for a text2text model. Feel free to modify the `question` and `context` values in `src/mu/generate_text2text.py` if you want to try other examples.
+```bash
+cd encoder-decoder-slm
+python -m mu.generate_text2text
+```
+
+### Text+image2text Inference
+We provide example inference code for a text+image2text model. Several images are included under `artifacts/images` for you to try. Feel free to modify the `image_file` and `question` values in `src/mu/generate_text+image2text.py` if you want to try other examples.
+```bash
+cd encoder-decoder-slm
+python -m mu.generate_text+image2text
+```
+
+### Training
+Run KD training using the following command
+```bash
+cd encoder-decoder-slm
+torchrun --nproc_per_node=${GPU_COUNT} -m mu.train_text2text_by_kd
+```
+Note that the KD training code references a 'teacher.pt' (which should be placed at `artifacts/models/teacher.pt`) which is a LoRA fine-tuned version of Phi-3-mini available on Hugging Face.
 
 ⭐ Star this repository to get notified when we release the rest of the codes and models!
 
