@@ -11,6 +11,8 @@ While large language models continue to grow in size, smaller models (≤1B para
  - 💾 11-16% less memory usage
  - ⚡ 22% fewer FLOPs for sequence generation
 
+We note that our work focuses on architectural comparisons rather than competing with recent SLM developments (e.g., SmolLM, MobileLLM). Our analysis isolates the fundamental advantages of encoder-decoder versus decoder-only designs in sub-1B parameter regimes, with particular emphasis on deployment efficiency.
+
 ![Architectural Comparison](IntroFigure.png)
 *Architectural Efficiency in SLMs. Left: Comparison of architectures where encoder-decoder creates a fixed input representation with KV cache only for output, while decoder-only requires growing KV caches for both input and output. Top right: Inference time scaling with input length, showing encoder-decoder's efficient fixed-representation approach versus decoder-only's steeper computational growth. Bottom right: Performance across tasks showing encoder-decoder's advantages at fixed compute budget, further enhanced by KD.*
 
@@ -27,4 +29,7 @@ Our 330M parameter model outperforms decoder-only baselines (given same training
 - XSum: 0.27/0.20 vs 0.24/0.19
 We also show that results continue as we scale the models up to 1B parameters.
 
-⭐ Star this repository to get notified when we release the code and models!
+
+
+⭐ Star this repository to get notified when we release the rest of the codes and models!
+
