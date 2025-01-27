@@ -31,7 +31,7 @@ We also show that results continue as we scale the models up to 1B parameters.
 
 ## Usage
 ### Package Installation
-Before running our code, please create a virtual conda environment using python==3.10, and install necessary packages.
+Start by creating a virtual conda environment using python==3.10, and install necessary packages.
 ```bash
 cd encoder-decoder-slm
 conda create -n slm_env python=3.10 -y
@@ -41,14 +41,14 @@ pip install -e .
 ```
 
 ### Text2text Inference
-We provide example inference code for a text2text model. Feel free to modify the `question` and `context` values in `src/mu/generate_text2text.py` if you want to try other examples.
+We provide example inference code for a text2text encoder-decoder model that is trained for QA+context. Feel free to modify the `question` and `context` values in `src/mu/generate_text2text.py` if you want to try other examples.
 ```bash
 cd encoder-decoder-slm
 python -m mu.generate_text2text
 ```
 
 ### Text+image2text Inference
-We provide example inference code for a text+image2text model. Several images are included under `artifacts/images` for you to try. Feel free to modify the `image_file` and `question` values in `src/mu/generate_text+image2text.py` if you want to try other examples.
+We provide example inference code for a text+image2text encoder-decoder model that is trained for VQA. Several images are included under `artifacts/images` for you to try. You can modify the `image_file` and `question` values in `src/mu/generate_text+image2text.py` if you want to try other examples.
 ```bash
 cd encoder-decoder-slm
 python -m mu.generate_text+image2text
@@ -60,7 +60,10 @@ Run KD training using the following command
 cd encoder-decoder-slm
 torchrun --nproc_per_node=${GPU_COUNT} -m mu.train_text2text_by_kd
 ```
-Note that the KD training code references a 'teacher.pt' (which should be placed at `artifacts/models/teacher.pt`) which is a LoRA fine-tuned version of Phi-3-mini available on Hugging Face.
+Note that the KD training code references a 'teacher.pt' (which should be placed at `artifacts/models/teacher.pt`) that is a Phi-3-mini with a LoRA finetuned on Squad-v2.0 available on Hugging Face.
+
+
+
 
 ⭐ Star this repository to get notified when we release the rest of the codes and models!
 
