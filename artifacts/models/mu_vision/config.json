@@ -1,0 +1,79 @@
+{
+  "_name_or_path": "/mnt/azureml/cr/j/92df5066ed4b4937897b0899aab3cae1/cap/data-capability/wd/INPUT_mu_model_path",
+  "add_faster_video": false,
+  "add_time_instruction": false,
+  "architectures": [
+    "LlavaMuForCausalLM"
+  ],
+  "block_size": 4096,
+  "cross_attn_every_n_layers": 1,
+  "cross_image_pos_embed": false,
+  "dropout": 0.1,
+  "faster_token_stride": 10,
+  "force_sample": false,
+  "hidden_dim": 3072,
+  "hidden_size": 768,
+  "image_aspect_ratio": "anyres_max_3",
+  "image_crop_resolution": null,
+  "image_grid_pinpoints": [
+    [
+      336,
+      336
+    ],
+    [
+      672,
+      672
+    ],
+    [
+      1008,
+      672
+    ],
+    [
+      672,
+      1008
+    ]
+  ],
+  "image_split_resolution": null,
+  "kd_loss_coef": 1,
+  "kd_one_word_prompt": false,
+  "mm_gating_tower": "",
+  "mm_hidden_size": 1024,
+  "mm_newline_position": "grid",
+  "mm_patch_merge_type": "spatial_unpad",
+  "mm_projector_lr": null,
+  "mm_projector_type": "mlp2x_gelu",
+  "mm_resampler_type": null,
+  "mm_spatial_pool_mode": "bilinear",
+  "mm_spatial_pool_stride": null,
+  "mm_tunable_parts": "mm_vision_tower,mm_mlp_adapter,mm_language_model",
+  "mm_use_im_patch_token": false,
+  "mm_use_im_start_end": false,
+  "mm_vision_select_feature": "patch",
+  "mm_vision_select_layer": -2,
+  "mm_vision_tower": "openai/clip-vit-large-patch14-336",
+  "mm_vision_tower_lr": 2e-06,
+  "model_type": "llava_mu",
+  "n_decoder_layer": 20,
+  "n_embd": 768,
+  "n_encoder_layer": 20,
+  "n_head": 16,
+  "n_kv_head": 8,
+  "n_layer": null,
+  "pad_token_id": 0,
+  "pos_skipping_range": 4096,
+  "rope_factor": 1.0,
+  "rope_theta": 10000,
+  "teacher_temperature": 1,
+  "tokenizer_model_max_length": 8192,
+  "tokenizer_padding_side": "right",
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.40.0",
+  "use_cache": false,
+  "use_knowledge_distillation": false,
+  "use_mm_proj": true,
+  "use_pos_skipping": false,
+  "use_vision_cross_attn": false,
+  "use_vision_cross_attn_pass_vision_token_to_encoder": false,
+  "vision_tower_pretrained": null,
+  "vocab_size": 32128
+}

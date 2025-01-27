@@ -1,7 +1,5 @@
 # Return of the Encoder: Efficient Small Language Models
 
-📢 **Coming Soon**: Pretrained models will be available shortly!
-
 ## Overview
 While large language models continue to grow in size, smaller models (≤1B parameters) require thoughtful architectural decisions. Our work demonstrates that encoder-decoder models inherently outperform decoder-only architectures before any optimizations:
 
