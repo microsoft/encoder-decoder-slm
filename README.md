@@ -1,4 +1,5 @@
 # Return of the Encoder: Efficient Small Language Models
+Code and Models of the Paper [Return of the Encoder](https://arxiv.org/pdf/2501.16273)
 
 ## Overview
 While large language models continue to grow in size, smaller models (≤1B parameters) require thoughtful architectural decisions. Our work demonstrates that encoder-decoder models inherently outperform decoder-only architectures before any optimizations:
@@ -14,7 +15,8 @@ While large language models continue to grow in size, smaller models (≤1B para
 We note that our work focuses on architectural comparisons rather than competing with recent SLM developments (e.g., SmolLM, MobileLLM). Our analysis isolates the fundamental advantages of encoder-decoder versus decoder-only designs in sub-1B parameter regimes, with particular emphasis on deployment efficiency.
 
 ![Architectural Comparison](IntroFigure.png)
-*Architectural Efficiency in SLMs. Left: Comparison of architectures where encoder-decoder creates a fixed input representation with KV cache only for output, while decoder-only requires growing KV caches for both input and output. Top right: Inference time scaling with input length, showing encoder-decoder's efficient fixed-representation approach versus decoder-only's steeper computational growth. Bottom right: Performance across tasks showing encoder-decoder's advantages at fixed compute budget, further enhanced by KD.*
+*
+Architectural Efficiency in SLMs. Left: Comparison of architectures where encoder-decoder creates a fixed input representation with KV cache only for output, while decoder-only requires growing KV caches for both input and output. Top right: Inference time scaling with input length, showing encoder-decoder's efficient fixed-representation approach versus decoder-only's steeper computational growth. Bottom right: Performance across tasks showing encoder-decoder's advantages at fixed compute budget, further enhanced by KD.*
 
 ## Technical Highlights
 - **Efficient Base Architecture**: 2/3-1/3 encoder-decoder split consistently outperforms decoder-only
